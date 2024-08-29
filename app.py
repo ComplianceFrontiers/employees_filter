@@ -78,7 +78,7 @@ def filter_records():
             result['_id'] = str(result['_id'])
 
         return jsonify(results), 200
-    except Exception as e:
+    except Exception as e: 
         return jsonify({'error': str(e)}), 500
     
 if __name__ == '__main__':
