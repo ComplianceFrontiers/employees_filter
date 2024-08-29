@@ -11,7 +11,7 @@ RETRY_DELAY_SECONDS = 1
 app = Flask(__name__)
 
 # Allow requests from specific origins
-CORS(app, origins="*")
+CORS(app)
 load_dotenv()
 
 # Get the MongoDB URI from the environment variable
@@ -79,7 +79,7 @@ def filter_records():
 
         return jsonify(results), 200
     except Exception as e:
-        return jsonify({'error': str(e)}), 500 
+        return jsonify({'error': str(e)}), 500
     
 if __name__ == '__main__':
     app.run()
